@@ -8,8 +8,8 @@ export default function DevolucionesPage() {
   const content = {
     es: {
       title: "Política de Reembolsos y Cancelaciones",
-      subtitle: "DIMMER POWER SHOPS, S.A DE C.V.",
-      date: "Fecha de última actualización: Julio de 2026",
+      subtitle: "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V.",
+      date: "Fecha de última actualización: Septiembre de 2026",
       intro: "Esta política aplica a todos los planes y proyectos digitales contratados a través de growthive.com.mx con la Empresa (“la Empresa”), incluyendo, pero no limitado a: planes de sitios web, tiendas en línea, plataformas especializadas, planes de branding + web y proyectos digitales a la medida.",
       sections: [
         {
@@ -108,8 +108,8 @@ export default function DevolucionesPage() {
     },
     en: {
       title: "Refunds and Cancellations Policy",
-      subtitle: "DIMMER POWER SHOPS, S.A DE C.V.",
-      date: "Last updated: July 2026",
+      subtitle: "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V.",
+      date: "Last updated: September 2026",
       intro: "This policy applies to all digital plans and projects contracted through growthive.com.mx with the Company (“the Company”), including, but not limited to: website plans, online stores, specialized platforms, branding + web plans, and custom digital projects.",
       sections: [
         {

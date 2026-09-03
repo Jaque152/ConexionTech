@@ -9,15 +9,15 @@ export default function TerminosPage() {
   const content = {
     es: {
       title: "Términos y Condiciones",
-      subtitle: "DIMMER POWER SHOPS, S.A DE C.V.",
-      date: "Fecha de entrada en vigor: Julio de 2026",
+      subtitle: "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V.",
+      date: "Fecha de entrada en vigor: Septiembre de 2026",
       sections: [
         {
           title: "A. Marco general del servicio",
           body: [
-            "La prestación de los servicios descritos en este sitio web corre a cargo de DIMMER POWER SHOPS, S.A DE C.V. (en adelante, “la Empresa”), con domicilio en Av. Chapultepec N°480 Piso 9 Dep. 901, Col. Roma Norte, C.P. 06700, Alcaldía Cuauhtémoc Ciudad de México.",
+            "La prestación de los servicios descritos en este sitio web corre a cargo de SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V. (en adelante, “la Empresa”), con domicilio en Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México.",
             "El uso del sitio growthive.com.mx y la contratación de cualquiera de los planes o proyectos digitales implica que el usuario (el “Cliente”) ha leído, comprende y acepta íntegramente estos Términos y Condiciones.",
-            "Para consultas, aclaraciones o soporte, el Cliente puede contactar a la Empresa en el correo hola@growthive.com.mx y en el teléfono [+52] 1 55 5088 5510."
+            "Para consultas, aclaraciones o soporte, el Cliente puede contactar a la Empresa en el correo hola@growthive.com.mx y en el teléfono [+52] 55 9826 1186"
           ]
         },
         {
@@ -153,15 +153,15 @@ export default function TerminosPage() {
     },
     en: {
       title: "Terms and Conditions",
-      subtitle: "DIMMER POWER SHOPS, S.A DE C.V.",
-      date: "Effective date: July 2026",
+      subtitle: "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V.",
+      date: "Effective date: September 2026",
       sections: [
         {
           title: "A. General Service Framework",
           body: [
-            "The provision of services described on this website is carried out by DIMMER POWER SHOPS, S.A DE C.V. (hereinafter, “the Company”), located at Av. Chapultepec N°480 Piso 9 Dep. 901, Col. Roma Norte, C.P. 06700, Alcaldía Cuauhtémoc, Mexico City.",
+            "The provision of services described on this website is carried out by SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V. (hereinafter, “the Company”), located at Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Mexico City.",
             "The use of the website growthive.com.mx and the contracting of any of the digital plans or projects implies that the user (the “Client”) has read, understands, and fully accepts these Terms and Conditions.",
-            "For inquiries, clarifications, or support, the Client may contact the Company at hola@growthive.com.mx and by phone at [+52] 1 55 5088 5510."
+            "For inquiries, clarifications, or support, the Client may contact the Company at hola@growthive.com.mx and by phone at [+52] 55 9826 1186"
           ]
         },
         {
@@ -312,7 +312,6 @@ export default function TerminosPage() {
               <h2 className="display mb-4 text-2xl font-semibold text-ink">{sec.title}</h2>
               <div className="space-y-3 text-[0.95rem] leading-relaxed text-ink/80">
                 {sec.body.map((paragraph, j) => {
-                  // Mapeo dinámico para inyectar el enlace a Privacidad si se menciona.
                   if (paragraph.includes("Aviso de Privacidad de la Empresa.") || paragraph.includes("Company's Privacy Policy.")) {
                     return (
                       <p key={j}>

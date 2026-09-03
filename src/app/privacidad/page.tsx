@@ -8,13 +8,13 @@ export default function PrivacidadPage() {
   const content = {
     es: {
       title: "Aviso de Privacidad",
-      date: "Fecha de última actualización: Julio de 2026",
+      date: "Fecha de última actualización: Septiembre de 2026",
       sections: [
         {
           title: "A. Identidad y domicilio del responsable",
           body: [
-            "DIMMER POWER SHOPS, S.A DE C.V. (en lo sucesivo, “la Empresa”), con domicilio en Av. Chapultepec N°480 Piso 9 Dep. 901, Col. Roma Norte, C.P. 06700, Alcaldía Cuauhtémoc Ciudad de México, es responsable del tratamiento de los datos personales que nos proporcione con motivo del uso del sitio web GROWTHIVE.COM.MX y de la contratación de nuestros servicios digitales.",
-            "Para cualquier asunto relacionado con este Aviso de Privacidad, usted puede comunicarse al correo electrónico hola@growthive.com.mx y al teléfono [+52] 1 55 5088 5510.",
+            "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V. (en lo sucesivo, “la Empresa”), con domicilio en Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México, es responsable del tratamiento de los datos personales que nos proporcione con motivo del uso del sitio web GROWTHIVE.COM.MX y de la contratación de nuestros servicios digitales.",
+            "Para cualquier asunto relacionado con este Aviso de Privacidad, usted puede comunicarse al correo electrónico hola@growthive.com.mx y al teléfono [+52] 55 9826 1186.",
             "Este Aviso se emite en cumplimiento de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, su Reglamento y los Lineamientos del Aviso de Privacidad."
           ]
         },
@@ -76,7 +76,7 @@ export default function PrivacidadPage() {
             "Como titular de los datos personales, usted puede ejercer en cualquier momento sus derechos de Acceso, Rectificación, Cancelación y Oposición (ARCO), así como revocar el consentimiento otorgado, en los términos previstos por la Ley.",
             "Para ejercer dichos derechos, deberá enviar una solicitud a:",
             "Correo electrónico: hola@growthive.com.mx",
-            "Domicilio: Av. Chapultepec N°480 Piso 9 Dep. 901, Col. Roma Norte, C.P. 06700, Alcaldía Cuauhtémoc Ciudad de México",
+            "Domicilio: Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México",
             "Su solicitud deberá contener, al menos:",
             "• Nombre completo y un medio para comunicarle la respuesta (domicilio, correo electrónico o número telefónico).",
             "• Copia de un documento que acredite su identidad o, en su caso, la representación legal (credencial oficial, poder, etc.).",
@@ -117,13 +117,13 @@ export default function PrivacidadPage() {
     },
     en: {
       title: "Privacy Policy",
-      date: "Last updated: July 2026",
+      date: "Last updated: September 2026",
       sections: [
         {
           title: "A. Identity and address of the responsible party",
           body: [
-            "DIMMER POWER SHOPS, S.A DE C.V. (hereinafter, \"the Company\"), located at Av. Chapultepec N°480 Piso 9 Dep. 901, Col. Roma Norte, C.P. 06700, Alcaldía Cuauhtémoc, Mexico City, is responsible for the processing of the personal data you provide to us through the use of the GROWTHIVE.COM.MX website and the contracting of our digital services.",
-            "For any matter related to this Privacy Policy, you can contact us at the email hola@growthive.com.mx and at the phone number [+52] 1 55 5088 5510.",
+            "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V. (hereinafter, \"the Company\"), located at Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Mexico City, is responsible for the processing of the personal data you provide to us through the use of the GROWTHIVE.COM.MX website and the contracting of our digital services.",
+            "For any matter related to this Privacy Policy, you can contact us at the email hola@growthive.com.mx and at the phone number [+52] 55 9826 1186.",
             "This Policy is issued in compliance with the Federal Law on Protection of Personal Data Held by Private Parties, its Regulations, and the Privacy Policy Guidelines."
           ]
         },
@@ -185,7 +185,7 @@ export default function PrivacidadPage() {
             "As the owner of personal data, you can exercise your rights of Access, Rectification, Cancellation, and Opposition (ARCO) at any time, as well as revoke the consent granted, under the terms provided by the Law.",
             "To exercise these rights, you must send a request to:",
             "Email: hola@growthive.com.mx",
-            "Address: Av. Chapultepec N°480 Piso 9 Dep. 901, Col. Roma Norte, C.P. 06700, Alcaldía Cuauhtémoc, Mexico City",
+            "Address: Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Mexico City",
             "Your request must contain at least:",
             "• Full name and a means to communicate the response (address, email, or phone number).",
             "• Copy of a document proving your identity or, where applicable, legal representation (official ID, power of attorney, etc.).",

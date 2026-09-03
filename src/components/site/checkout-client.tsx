@@ -363,8 +363,8 @@ export function CheckoutClient() {
                 Pago encriptado y seguro
               </div>
               <img 
-                src="/etomin_logo.svg" 
-                alt="Procesado por Etomin Payments" 
+                src="/logo-octano-2.png" 
+                alt="Procesado por Octano Payments" 
                 className="h-[30px] object-contain opacity-80 mix-blend-multiply" 
               />
             </div>
