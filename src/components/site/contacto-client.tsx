@@ -10,12 +10,12 @@ export function ContactoClient() {
   const { t } = useLanguage();
 
   const DETAILS = [
-    { icon: Phone, label: t.contactPage.detailsLabelPhone, value: "+52 1 55 5088 5510", href: "tel:+5215550885510" },
+    { icon: Phone, label: t.contactPage.detailsLabelPhone, value: "+52 55 9826 1186", href: "tel:+525598261186" },
     { icon: Mail, label: t.contactPage.detailsLabelEmail, value: "hola@growthive.com.mx", href: "mailto:hola@growthive.com.mx" },
     {
       icon: MapPin,
       label: t.contactPage.detailsLabelAddress,
-      value: "Av. Chapultepec No. 480, Piso 9, Col. Roma Norte, C.P. 06700, Alcaldía Cuauhtémoc, CDMX",
+      value: "Boulevard Adolfo López Mateos 2165, Interior 607A Oficina 607A-B Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México",
       href: "#",
     },
   ];

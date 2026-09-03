@@ -34,7 +34,7 @@ export const dictionaries = {
       contactEyebrow: "Contáctanos",
       addressEyebrow: "Dirección",
       addressText:
-        "Av. Chapultepec No. 480, Piso 9, Col. Roma Norte, C.P. 06700, Alcaldía Cuauhtémoc, CDMX.",
+        "Boulevard Adolfo López Mateos 2165, Interior 607A Oficina 607A-B Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México",
       copyright: "© 2026 Growthive.com.mx — Hecho con intención en México.",
       studio: "Estudio digital",
     },
@@ -284,7 +284,7 @@ export const dictionaries = {
       contactEyebrow: "Contact Us",
       addressEyebrow: "Address",
       addressText:
-        "Av. Chapultepec No. 480, 9th Floor, Col. Roma Norte, C.P. 06700, Cuauhtémoc, Mexico City.",
+        "Boulevard Adolfo López Mateos 2165, Interior 607A Oficina 607A-B Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México",
       copyright: "© 2026 Growthive.com.mx — Crafted with intention in Mexico.",
       studio: "Digital Studio",
     },

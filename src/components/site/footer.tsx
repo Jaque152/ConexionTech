@@ -66,10 +66,10 @@ export function Footer() {
             <p className="eyebrow text-clay">{t.footer.contactEyebrow}</p>
             <div className="flex flex-col gap-2">
               <a
-                href="tel:+5215550885510"
+                href="tel:+525598261186"
                 className="text-cream-paper/80 transition-colors hover:text-cream-paper"
               >
-                +52 1 55 5088 5510
+                +52 55 9826 1186
               </a>
               <a
                 href="mailto:hola@growthive.com.mx"
