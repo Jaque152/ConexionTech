@@ -1,44 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Marquee } from "@/components/site/marquee";
 import { useLanguage } from "@/lib/language-context";
-
-function Word({ text }: { text: string }) {
-  return (
-    <span className="display text-[13vw] font-black uppercase leading-none text-stroke-cream">
-      {text}
-    </span>
-  );
-}
 
 export function CtaBand() {
   const { t } = useLanguage();
 
   return (
-    <section className="ink-panel relative overflow-hidden py-24 sm:py-36">
-      <div className="pointer-events-none absolute inset-0 flex flex-col justify-center gap-2">
-        <Marquee duration={34} gap="3rem">
-          <Word text={t.ctaBand.word} />
-          <span className="text-[6vw] text-clay">✦</span>
-          <Word text={t.ctaBand.word} />
-          <span className="text-[6vw] text-clay">✦</span>
-        </Marquee>
-        <Marquee duration={34} reverse gap="3rem">
-          <Word text={t.ctaBand.word} />
-          <span className="text-[6vw] text-ochre">✦</span>
-          <Word text={t.ctaBand.word} />
-          <span className="text-[6vw] text-ochre">✦</span>
-        </Marquee>
-      </div>
-
-      <div className="relative z-10 grid place-items-center px-6">
-        <Button asChild variant="cream" size="xl" className="shadow-2xl">
+    <section className="relative overflow-hidden py-24 sm:py-32 bg-slate-900 border-y border-slate-800">
+      <div className="absolute inset-0 cyber-grid opacity-50" />
+      
+      <div className="relative z-10 flex flex-col items-center text-center px-6 mx-auto max-w-4xl">
+        <Terminal className="h-10 w-10 text-sky-500 mb-6" />
+        
+        <h2 className="text-4xl sm:text-6xl font-black uppercase text-slate-200 tracking-tight leading-tight mb-8">
+          {t.ctaBand.word}
+        </h2>
+        
+        <Button asChild size="xl" className="bg-sky-600 text-slate-950 hover:bg-sky-500 font-mono tracking-widest uppercase rounded-sm shadow-[0_0_20px_rgba(14,165,233,0.3)]">
           <Link href="/contacto">
             {t.ctaBand.btnText}
-            <ArrowRight className="h-5 w-5" />
           </Link>
         </Button>
       </div>

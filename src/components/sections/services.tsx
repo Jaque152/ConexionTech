@@ -11,51 +11,53 @@ export function Services() {
   return (
     <section
       id="servicios"
-      className="border-y border-ink/10 bg-sand/40 py-20 sm:py-28"
+      className="border-y border-slate-800 bg-slate-900/30 py-24 sm:py-32 relative"
     >
-      <div className="mx-auto max-w-[1400px] container-px">
-        <div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
+      <div className="absolute inset-0 cyber-grid opacity-20 pointer-events-none" />
+      
+      <div className="mx-auto max-w-[1400px] container-px relative z-10">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between mb-16">
           <div>
-            <span className="eyebrow inline-flex items-center gap-2.5 text-ink/60">
-              <span className="h-2 w-2 rounded-full bg-clay" />
+            <span className="font-mono text-xs uppercase tracking-widest text-sky-500 flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-sky-500 animate-pulse" />
               {t.services.eyebrow}
             </span>
             <Reveal>
-              <h2 className="display mt-6 max-w-2xl text-balance text-4xl font-semibold leading-[1.05] text-ink sm:text-5xl">
+              <h2 className="mt-4 max-w-2xl text-4xl font-black uppercase tracking-tight leading-[1.1] text-slate-200 sm:text-5xl">
                 {t.services.title}
               </h2>
             </Reveal>
           </div>
-          <p className="max-w-xs text-pretty text-sm leading-relaxed text-muted-foreground">
+          <p className="max-w-xs text-sm leading-relaxed text-slate-400 font-mono">
             {t.services.desc}
           </p>
         </div>
 
-        <div className="mt-12">
+        <div className="grid md:grid-cols-2 gap-6">
           {t.services.items.map((item, i) => (
-            <Reveal key={item.n} delay={i * 0.04}>
+            <Reveal key={item.n} delay={i * 0.1}>
               <Link
                 href="/servicios"
-                className="group -mx-3 grid grid-cols-[auto_1fr_auto] items-center gap-5 rounded-2xl border-t border-ink/15 px-3 py-6 transition-colors duration-300 hover:bg-cream-paper/60 sm:gap-8 sm:py-7"
+                className="group flex flex-col h-full rounded-xl border border-slate-800 bg-slate-950/50 p-8 transition-all duration-300 hover:border-sky-500/50 hover:bg-slate-900 hover:shadow-[0_0_30px_rgba(14,165,233,0.1)]"
               >
-                <span className="display text-3xl font-black text-ink/15 transition-colors duration-300 group-hover:text-clay sm:text-5xl">
-                  {item.n}
-                </span>
-                <div className="grid gap-1 sm:grid-cols-[1fr_1.2fr] sm:items-center sm:gap-8">
-                  <h3 className="display text-2xl font-semibold text-ink transition-colors duration-300 group-hover:text-clay sm:text-[2rem]">
-                    {item.title}
-                  </h3>
-                  <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-                    {item.desc}
-                  </p>
+                <div className="flex justify-between items-start mb-6">
+                  <span className="font-mono text-4xl font-black text-slate-800 transition-colors duration-300 group-hover:text-sky-500/30">
+                    {item.n}
+                  </span>
+                  <span className="grid h-10 w-10 place-items-center rounded bg-slate-900 border border-slate-800 text-slate-500 transition-all duration-300 group-hover:border-sky-500 group-hover:bg-sky-500 group-hover:text-slate-950">
+                    <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:rotate-45" />
+                  </span>
                 </div>
-                <span className="grid h-11 w-11 place-items-center rounded-full border border-ink/20 text-ink transition-all duration-300 group-hover:border-clay group-hover:bg-clay group-hover:text-cream-paper">
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45" />
-                </span>
+                
+                <h3 className="text-2xl font-bold uppercase tracking-tight text-slate-200 mb-3 transition-colors duration-300 group-hover:text-sky-400">
+                  {item.title}
+                </h3>
+                <p className="font-mono text-[0.85rem] leading-relaxed text-slate-500 mt-auto">
+                  {item.desc}
+                </p>
               </Link>
             </Reveal>
           ))}
-          <div className="border-t border-ink/15" />
         </div>
       </div>
     </section>

@@ -1,34 +1,15 @@
+import { Terminal } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export function Logo({
-  className,
-  variant = "ink",
-  wordmark = true,
-}: {
-  className?: string;
-  variant?: "ink" | "cream";
-  wordmark?: boolean;
-}) {
+export function Logo({ className }: { className?: string }) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <span className="relative grid h-9 w-9 shrink-0 place-items-center rounded-[7px] bg-clay shadow-[0_2px_0_0_var(--clay-deep)]">
-        <span className="display -translate-x-[0.5px] text-[1.1rem] font-black leading-none text-cream-paper">
-          G
-        </span>
-        <span className="absolute -right-[3px] -top-[3px] grid h-[15px] w-[15px] place-items-center rounded-full bg-ochre ring-2 ring-[var(--cream)]">
-          <span className="ml-[1px] h-0 w-0 border-y-[2.5px] border-l-[4px] border-y-transparent border-l-ink" />
-        </span>
+    <span className={cn("flex items-center gap-3 group", className)}>
+      <div className="grid h-8 w-8 place-items-center rounded bg-slate-900 border border-sky-500/30 text-sky-400 transition-colors group-hover:border-sky-500">
+        <Terminal className="h-4 w-4" />
+      </div>
+      <span className="font-mono text-sm font-bold tracking-widest text-slate-200">
+        CONEXION<span className="text-sky-500">TECH</span>
       </span>
-      {wordmark && (
-        <span
-          className={cn(
-            "display text-[1.4rem] font-semibold leading-none tracking-tight",
-            variant === "cream" ? "text-cream-paper" : "text-ink",
-          )}
-        >
-          Grow<span className="italic text-clay">thive</span>
-        </span>
-      )}
     </span>
   );
 }

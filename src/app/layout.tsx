@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
-import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
-import Script from "next/script";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
-  axes: ["opsz"],
 });
 
-const hanken = Hanken_Grotesk({
-  variable: "--font-sans",
+const inter = Inter({
+  variable: "--font-inter", 
   subsets: ["latin"],
   display: "swap",
 });
@@ -24,9 +22,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Growthive.com.mx — Estudio digital · Diseño y desarrollo web a la medida",
+  title: "ConexionTech — Ingeniería Web y Growth Marketing",
   description:
-    "Creamos páginas web, tiendas en línea y plataformas a la medida para emprendedores y empresas. Diseño profesional, entrega 100% en línea desde CDMX.",
+    "Desarrollo full-stack, automatización y estrategias de marketing basadas en datos. Soluciones tecnológicas desde CDMX.",
 };
 
 export default function RootLayout({
@@ -37,9 +35,9 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${fraunces.variable} ${hanken.variable} ${jetbrains.variable}`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrains.variable}`}
     >
-      <body suppressHydrationWarning className="antialiased">
+      <body suppressHydrationWarning className="antialiased bg-[#0f172a]">
         <ClientBody>{children}</ClientBody>
       </body>
     </html>
