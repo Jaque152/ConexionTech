@@ -197,7 +197,7 @@ export const dictionaries = {
       summaryEyebrow: "Output del Pedido",
       processing: "Encriptando",
       placeOrder: "Confirmar Ejecución",
-      protected: "Transacción cifrada end-to-end",
+      protected: "Transacción cifrada ",
       requiredErr: "Variable nula",
       invalidEmail: "Sintaxis de email inválida",
       digits5: "Requiere 5 dígitos",
