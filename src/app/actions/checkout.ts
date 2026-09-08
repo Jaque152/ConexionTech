@@ -68,10 +68,10 @@ export async function processCheckout(payload: CheckoutPayload) {
     const passwordStr = process.env.ETOMIN_PASSWORD;
 
     if (!emailStr || !passwordStr) {
-      throw new Error("Variables de entorno de Etomin no configuradas.");
+      throw new Error("Variables de entorno de Etomin (User/Password) no configuradas.");
     }
 
-    // A. AUTENTICACIÓN
+    // A. AUTENTICACIÓN EN ETOMIN (Obtener AuthToken)
     const authResponse = await etominClient.post("/signin", {
       email: emailStr,
       password: passwordStr,
@@ -80,7 +80,7 @@ export async function processCheckout(payload: CheckoutPayload) {
     const authToken = authResponse.data?.authToken;
     if (!authToken) throw new Error("Error de autenticación con la pasarela Etomin.");
 
-    // B. TOKENIZACIÓN
+    // B. TOKENIZACIÓN DE LA TARJETA
     const expParts = form.exp.split("/");
     const expirationMonth = expParts[0].trim();
     const expirationYear = `20${expParts[1].trim()}`;
@@ -89,19 +89,21 @@ export async function processCheckout(payload: CheckoutPayload) {
       "/card/tokenizer",
       {
         cardData: {
-          cardNumber: form.card.replace(/\s/g, ""),
+          cardNumber: form.card.replace(/\s/g, ""), 
           cardholderName: form.cardName,
           expirationMonth,
           expirationYear,
         },
       },
-      { headers: { Authorization: `Bearer ${authToken}` } }
+      {
+        headers: { Authorization: `Bearer ${authToken}` },
+      }
     );
 
     const cardToken = tokenResponse.data?.cardNumberToken;
-    if (!cardToken) throw new Error("Error al procesar la tarjeta.");
+    if (!cardToken) throw new Error("Error al procesar y tokenizar la tarjeta.");
 
-    // C. PROCESAR VENTA
+    // C. PROCESAR LA VENTA
     const salePayload = {
       amount: Math.round(totals.total * 100) / 100,
       currency: "484", 
@@ -118,11 +120,11 @@ export async function processCheckout(payload: CheckoutPayload) {
         postalCode: form.cp,
         country: form.pais === "México" ? "MX" : "US",
         company: form.empresa || "",
-        ip: "127.0.0.1",
+        ip: "127.0.0.1", 
       },
       cardData: {
         cardNumberToken: cardToken,
-        cvv: form.cvc.replace(/\s/g, ""),
+        cvv: form.cvc.replace(/\s/g, ""), 
       },
       metadata: {
         notes: form.notas || "Sin notas",
@@ -134,26 +136,47 @@ export async function processCheckout(payload: CheckoutPayload) {
       headers: { Authorization: `Bearer ${authToken}` },
     });
 
-    // D. EVALUAR RESPUESTA
-    const isApproved = saleResponse.data.status?.toUpperCase() === "APPROVED";
+    const saleData = saleResponse.data;
+    const isApproved = saleData.status?.toUpperCase() === "APPROVED";
 
     if (!isApproved) {
-      return { success: false, error: "Pago declinado. Revisa los fondos o intenta con otra tarjeta." };
+      console.error("❌ Pago Declinado por Etomin:", saleData);
+      return { 
+        success: false, 
+        error: "El pago fue declinado. Revisa los fondos o intenta con otra tarjeta." 
+      };
     }
 
-    // E. CORREOS
+    // E. ENVÍO DE CORREOS CONFIRMATORIOS AL SER APROBADO
     await enviarCorreos(orderId, form, items, totals, currentLang);
 
     return { success: true, orderId };
     
-  } catch (error: any) {
-    console.error("❌ Checkout Error (Etomin):", error.response?.data || error.message);
-    const errorMessage = error.response?.data?.message || error.message || "Ocurrió un error al procesar el pago.";
-    return { success: false, error: errorMessage };
+  } catch (error: unknown) {
+    // RESOLUCIÓN DE TIPOS ESTRICTOS (Type Guards)
+    if (axios.isAxiosError(error)) {
+      console.error("❌ Checkout Error (Etomin Axios):", error.response?.data || error.message);
+      
+      // Aseguramos que errorMessage sea de tipo string usando coerción segura
+      const responseMessage = error.response?.data?.message;
+      const errorMessage = typeof responseMessage === 'string' 
+        ? responseMessage 
+        : error.message || "Ocurrió un error al procesar el pago.";
+        
+      return { success: false, error: errorMessage };
+    } 
+    
+    if (error instanceof Error) {
+      console.error("❌ Checkout Error (General):", error.message);
+      return { success: false, error: error.message };
+    }
+
+    console.error("❌ Checkout Error (Desconocido):", error);
+    return { success: false, error: "Ocurrió un error desconocido al procesar el pago." };
   }
 }
 
-// 4. NOTIFICACIONES
+// 4. ENVÍO DE CORREOS
 async function enviarCorreos(
   orderId: string,
   form: CheckoutFormState,
@@ -163,14 +186,78 @@ async function enviarCorreos(
 ) {
   const adminEmail = process.env.ADMIN_EMAIL || "hola@conexiontech.com.mx";
   const senderEmail = "ConexionTech <hola@conexiontech.com.mx>"; 
-  const currentLang = lang || "es";
+
+  const texts = {
+    es: {
+      subjectClient: `Log de Operación - Tx: ${orderId}`,
+      subjectAdmin: `💰 [SYS_NOTIFY] INGRESO APROBADO: ${orderId} - ${form.nombre}`,
+      title: `Confirmación de Despliegue: ${orderId}`,
+      hello: `SYS_USER`,
+      intro: `La transacción ha sido encriptada y validada exitosamente en la red de Etomin. El proceso de despliegue ha sido inicializado.`,
+      totalPaid: `Total Transferido:`,
+      clientData: `Parámetros de Cliente`,
+      emailLabel: `Email:`,
+      phoneLabel: `Teléfono:`,
+      companyLabel: `Organización / RFC:`,
+      footer: `ConexionTech — Ingeniería Web y Sistemas | CDMX.`
+    },
+    en: {
+      subjectClient: `Operation Log - Tx: ${orderId}`,
+      subjectAdmin: `💰 [SYS_NOTIFY] INCOME APPROVED: ${orderId} - ${form.nombre}`,
+      title: `Deployment Confirmation: ${orderId}`,
+      hello: `SYS_USER`,
+      intro: `The transaction has been successfully encrypted and validated on the Etomin network. The deployment process has been initialized.`,
+      totalPaid: `Total Transferred:`,
+      clientData: `Client Parameters`,
+      emailLabel: `Email:`,
+      phoneLabel: `Phone:`,
+      companyLabel: `Organization / Tax ID:`,
+      footer: `ConexionTech — Web Engineering & Systems | CDMX.`
+    }
+  };
+
+  const t = texts[lang] || texts["es"];
+  
+  const itemsListHtml = items.map((i) => `
+    <tr>
+      <td style="padding: 12px 10px; border-bottom: 1px solid #1e293b; color: #cbd5e1; font-family: monospace;">${i.qty}x ${i.product[lang].name}</td>
+      <td style="padding: 12px 10px; border-bottom: 1px solid #1e293b; text-align: right; color: #f8fafc; font-family: monospace;">$${(i.product.priceMXN * i.qty).toFixed(2)} MXN</td>
+    </tr>
+  `).join("");
 
   const emailBody = `
-    <div style="font-family: monospace; max-w: 600px; margin: 0 auto; background-color: #0f172a; padding: 40px; color: #94a3b8;">
-      <h2 style="color: #f8fafc;">NUEVA ORDEN: ${orderId}</h2>
-      <p>Usuario: <strong style="color: #0ea5e9;">${form.nombre}</strong></p>
-      <p>Total: $${totals.total.toFixed(2)} MXN</p>
-      <p>Status: VERIFIED_AND_ENCRYPTED</p>
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-w: 600px; margin: 0 auto; background-color: #0f172a; padding: 40px; border-radius: 8px; border: 1px solid #1e293b; color: #94a3b8;">
+      
+      <div style="text-align: center; margin-bottom: 30px;">
+        <span style="font-family: monospace; font-size: 24px; font-weight: 800; color: #0ea5e9; letter-spacing: 2px;">CONEXION<span style="color:#f8fafc">TECH</span></span>
+      </div>
+
+      <h2 style="color: #f8fafc; font-size: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #1e293b; padding-bottom: 10px;">${t.title}</h2>
+      
+      <p style="margin-top: 20px;">${t.hello}: <strong style="color: #0ea5e9;">${form.nombre}</strong></p>
+      <p style="line-height: 1.6;">${t.intro}</p>
+      
+      <div style="background-color: #020617; border-radius: 6px; padding: 20px; margin-top: 30px; border: 1px solid #1e293b;">
+        <table style="width: 100%; border-collapse: collapse;">
+          ${itemsListHtml}
+          <tr>
+            <td style="padding: 15px 10px 5px 10px; font-weight: bold; text-align: right; color: #94a3b8; font-family: monospace; text-transform: uppercase;">${t.totalPaid}</td>
+            <td style="padding: 15px 10px 5px 10px; font-weight: bold; text-align: right; color: #0ea5e9; font-size: 18px;">$${totals.total.toFixed(2)} <span style="font-size: 12px;">MXN</span></td>
+          </tr>
+        </table>
+      </div>
+
+      <h3 style="margin-top: 40px; color: #f8fafc; font-size: 14px; font-family: monospace; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #1e293b; padding-bottom: 5px;">${t.clientData}</h3>
+      <p style="line-height: 1.8; font-family: monospace;">
+        <strong style="color: #64748b;">${t.emailLabel}</strong> <span style="color: #cbd5e1;">${form.email}</span><br/>
+        <strong style="color: #64748b;">${t.phoneLabel}</strong> <span style="color: #cbd5e1;">${form.telefono}</span><br/>
+        <strong style="color: #64748b;">${t.companyLabel}</strong> <span style="color: #cbd5e1;">${form.empresa || "N/A"} / ${form.rfc || "N/A"}</span>
+      </p>
+
+      <div style="margin-top: 50px; text-align: center; font-size: 11px; color: #475569; font-family: monospace; text-transform: uppercase; letter-spacing: 1px;">
+        <p>SYS_STATUS: VERIFIED_AND_ENCRYPTED</p>
+        <p>${t.footer}</p>
+      </div>
     </div>
   `;
 
@@ -178,16 +265,22 @@ async function enviarCorreos(
     await resend.emails.send({
       from: senderEmail,
       to: form.email,
-      subject: `Log de Operación - Tx: ${orderId}`,
+      subject: t.subjectClient,
       html: emailBody,
     });
+
     await resend.emails.send({
       from: senderEmail,
       to: adminEmail,
-      subject: `💰 [SYS_NOTIFY] INGRESO APROBADO: ${orderId}`,
-      html: emailBody,
+      subject: t.subjectAdmin,
+      html: `<div style="background-color: #020617; padding: 40px;">${emailBody}</div>`,
     });
-  } catch (err) {
-    console.error("❌ Error ejecutando Resend:", err);
+  } catch (err: unknown) {
+    // También aplicamos tipado estricto al catch de Resend
+    if (err instanceof Error) {
+      console.error("❌ Error ejecutando Resend:", err.message);
+    } else {
+      console.error("❌ Error desconocido ejecutando Resend:", err);
+    }
   }
 }
