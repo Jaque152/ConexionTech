@@ -91,13 +91,6 @@ export function Footer() {
             <p className="max-w-xs font-mono text-xs leading-relaxed text-slate-400 mt-4">
               {t.footer.addressText}
             </p>
-          </div>
-
-          <div className="space-y-4">
-            <p className="eyebrow text-clay">{t.footer.addressEyebrow}</p>
-            <p className="max-w-xs text-sm leading-relaxed text-cream-paper/80">
-              {t.footer.addressText}
-            </p>
             <div className="flex items-center gap-2 pt-1">
               <VisaBadge />
               <MastercardBadge />
