@@ -22,8 +22,8 @@ export interface ContactPayload {
 export async function processContact(payload: ContactPayload) {
   try {
     const { form, lang } = payload;
-    const adminEmail = process.env.ADMIN_EMAIL || "hola@growthive.com.mx";
-    const senderEmail = "Growthive <hola@growthive.com.mx>";
+    const adminEmail = process.env.ADMIN_EMAIL || "hola@conexiontech.com.mx";
+    const senderEmail = "ConexionTech <hola@conexiontech.com.mx>";
 
     const texts = {
       es: {
@@ -38,7 +38,7 @@ export async function processContact(payload: ContactPayload) {
         phone: "Teléfono:",
         subject: "Asunto:",
         message: "Mensaje:",
-        footer: "Growthive — Estudio Digital CDMX."
+        footer: "ConexionTech — Estudio Digital CDMX."
       },
       en: {
         subjectClient: "We have received your message - ConexionTech",
@@ -52,7 +52,7 @@ export async function processContact(payload: ContactPayload) {
         phone: "Phone:",
         subject: "Subject:",
         message: "Message:",
-        footer: "Growthive — Digital Studio CDMX."
+        footer: "ConexionTech — Digital Studio CDMX."
       }
     };
 
