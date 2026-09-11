@@ -189,7 +189,7 @@ async function enviarCorreos(
 
   const texts = {
     es: {
-      subjectClient: `Log de Operación - Tx: ${orderId}`,
+      subjectClient: `Confirmacion de operación`,
       subjectAdmin: `💰 [SYS_NOTIFY] INGRESO APROBADO: ${orderId} - ${form.nombre}`,
       title: `Confirmación de Despliegue: ${orderId}`,
       hello: `SYS_USER`,
@@ -202,7 +202,7 @@ async function enviarCorreos(
       footer: `ConexionTech — Ingeniería Web y Sistemas | CDMX.`
     },
     en: {
-      subjectClient: `Operation Log - Tx: ${orderId}`,
+      subjectClient: `Operation Successful`,
       subjectAdmin: `💰 [SYS_NOTIFY] INCOME APPROVED: ${orderId} - ${form.nombre}`,
       title: `Deployment Confirmation: ${orderId}`,
       hello: `SYS_USER`,
