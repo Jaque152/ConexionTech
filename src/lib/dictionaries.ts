@@ -116,7 +116,7 @@ export const dictionaries = {
         { n: "03", title: "Código (Dev)", desc: "Programación frontend/backend, integración de APIs y pruebas unitarias." },
         { n: "04", title: "Deploy (Producción)", desc: "Lanzamiento a servidores seguros, monitoreo de latencia y entrega." },
       ],
-      ctaBtn: "Ver documentación",
+      ctaBtn: "Contacto",
       orbitCenterText: "Init",
     },
     ctaBand: {
@@ -366,7 +366,7 @@ export const dictionaries = {
         { n: "03", title: "Code (Dev)", desc: "Frontend/backend programming, API integrations, and unit testing." },
         { n: "04", title: "Deploy (Prod)", desc: "Launch to secure servers, latency monitoring, and handover." },
       ],
-      ctaBtn: "View documentation",
+      ctaBtn: "Contact",
       orbitCenterText: "Init",
     },
     ctaBand: {
