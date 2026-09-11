@@ -27,7 +27,7 @@ export async function processContact(payload: ContactPayload) {
 
     const texts = {
       es: {
-        subjectClient: "Hemos recibido tu mensaje - Growthive",
+        subjectClient: "Hemos recibido tu mensaje - ConexionTech",
         subjectAdmin: `Nuevo mensaje de contacto: ${form.nombre}`,
         title: "¡Gracias por contactarnos!",
         hello: "Hola",
@@ -41,7 +41,7 @@ export async function processContact(payload: ContactPayload) {
         footer: "Growthive — Estudio Digital CDMX."
       },
       en: {
-        subjectClient: "We have received your message - Growthive",
+        subjectClient: "We have received your message - ConexionTech",
         subjectAdmin: `New contact message: ${form.nombre}`,
         title: "Thank you for reaching out!",
         hello: "Hello",
