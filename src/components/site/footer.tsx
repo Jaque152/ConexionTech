@@ -83,6 +83,16 @@ export function Footer() {
               </a>
             </div>
           </div>
+
+          <div className="space-y-4">
+            <p className="font-mono text-[0.7rem] uppercase tracking-widest text-sky-500">
+              {t.footer.addressEyebrow}
+            </p>
+            <p className="max-w-xs font-mono text-xs leading-relaxed text-slate-400 mt-4">
+              {t.footer.addressText}
+            </p>
+          </div>
+
           <div className="space-y-4">
             <p className="eyebrow text-clay">{t.footer.addressEyebrow}</p>
             <p className="max-w-xs text-sm leading-relaxed text-cream-paper/80">
@@ -92,15 +102,6 @@ export function Footer() {
               <VisaBadge />
               <MastercardBadge />
             </div>
-          </div>
-
-          <div className="space-y-4">
-            <p className="font-mono text-[0.7rem] uppercase tracking-widest text-sky-500">
-              {t.footer.addressEyebrow}
-            </p>
-            <p className="max-w-xs font-mono text-xs leading-relaxed text-slate-400 mt-4">
-              {t.footer.addressText}
-            </p>
           </div>
         </div>
 
