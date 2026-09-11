@@ -12,6 +12,26 @@ function SystemBadge({ text }: { text: string }) {
   );
 }
 
+function VisaBadge() {
+  return (
+    <span className="grid h-8 w-12 place-items-center rounded-md bg-cream-paper">
+      <span className="font-display text-sm font-black italic tracking-tight text-ink">
+        VISA
+      </span>
+    </span>
+  );
+}
+
+function MastercardBadge() {
+  return (
+    <span className="flex h-8 w-12 items-center justify-center gap-[-6px] rounded-md bg-cream-paper">
+      <span className="h-5 w-5 rounded-full bg-clay" />
+      <span className="-ml-2 h-5 w-5 rounded-full bg-ochre/90 mix-blend-multiply" />
+    </span>
+  );
+}
+
+
 export function Footer() {
   const { t } = useLanguage();
   const legalRoutes = ["/privacidad", "/terminos", "/devoluciones"];
@@ -63,6 +83,16 @@ export function Footer() {
               </a>
             </div>
           </div>
+          <div className="space-y-4">
+            <p className="eyebrow text-clay">{t.footer.addressEyebrow}</p>
+            <p className="max-w-xs text-sm leading-relaxed text-cream-paper/80">
+              {t.footer.addressText}
+            </p>
+            <div className="flex items-center gap-2 pt-1">
+              <VisaBadge />
+              <MastercardBadge />
+            </div>
+          </div>
 
           <div className="space-y-4">
             <p className="font-mono text-[0.7rem] uppercase tracking-widest text-sky-500">
@@ -71,10 +101,6 @@ export function Footer() {
             <p className="max-w-xs font-mono text-xs leading-relaxed text-slate-400 mt-4">
               {t.footer.addressText}
             </p>
-            <div className="flex items-center gap-2 pt-4">
-              <SystemBadge text="SECURE_PAY_SYS" />
-              <SystemBadge text="SSL_ENCRYPTED" />
-            </div>
           </div>
         </div>
 
