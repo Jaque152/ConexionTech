@@ -29,7 +29,7 @@ export const dictionaries = {
       legal: [
         "Aviso de privacidad",
         "Términos y Condiciones",
-        "Política de despliegue y cancelaciones",
+        "Política de reembolsos y cancelaciones",
       ],
       contactEyebrow: "Canal de Soporte",
       addressEyebrow: "Base de Operaciones",

@@ -190,8 +190,8 @@ async function enviarCorreos(
   const texts = {
     es: {
       subjectClient: `Confirmacion de operación - ConexionTech`,
-      subjectAdmin: `💰 [SYS_NOTIFY] INGRESO APROBADO: ${orderId} - ${form.nombre}`,
-      title: `Confirmación de Despliegue: ${orderId}`,
+      subjectAdmin: `💰 [SYS_NOTIFY] INGRESO APROBADO: - ${form.nombre}`,
+      title: `Confirmación de Despliegue`,
       hello: `SYS_USER`,
       intro: `La transacción ha sido encriptada y validada exitosamente en la red de Etomin. El proceso de despliegue ha sido inicializado.`,
       totalPaid: `Total Transferido:`,
@@ -203,8 +203,8 @@ async function enviarCorreos(
     },
     en: {
       subjectClient: `Operation Successful - ConexionTech`,
-      subjectAdmin: `💰 [SYS_NOTIFY] INCOME APPROVED: ${orderId} - ${form.nombre}`,
-      title: `Deployment Confirmation: ${orderId}`,
+      subjectAdmin: `💰 [SYS_NOTIFY] INCOME APPROVED: - ${form.nombre}`,
+      title: `Deployment Confirmation`,
       hello: `SYS_USER`,
       intro: `The transaction has been successfully encrypted and validated on the Etomin network. The deployment process has been initialized.`,
       totalPaid: `Total Transferred:`,

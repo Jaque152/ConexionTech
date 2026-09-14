@@ -8,9 +8,9 @@ export default function DevolucionesPage() {
   const content = {
     es: {
       title: "Política de Reembolsos y Cancelaciones",
-      subtitle: "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V.",
+      subtitle: "DIMMER POWER SHOPS, S.A DE C.V.",
       date: "Fecha de última actualización: Septiembre de 2026",
-      intro: "Esta política aplica a todos los planes y proyectos digitales contratados a través de growthive.com.mx con la Empresa (“la Empresa”), incluyendo, pero no limitado a: planes de sitios web, tiendas en línea, plataformas especializadas, planes de branding + web y proyectos digitales a la medida.",
+      intro: "Esta política aplica a todos los planes y proyectos digitales contratados a través de conexiontech.com.mx con la Empresa (“la Empresa”), incluyendo, pero no limitado a: planes de sitios web, tiendas en línea, plataformas especializadas, planes de branding + web y proyectos digitales a la medida.",
       sections: [
         {
           title: "A. Naturaleza de los servicios y consideraciones generales",
@@ -75,8 +75,7 @@ export default function DevolucionesPage() {
           title: "H. Reembolsos parciales y forma de pago del reembolso",
           body: [
             "Cuando aplique un reembolso (total o parcial), éste se realizará preferentemente utilizando el mismo medio de pago empleado por el Cliente, es decir, a través de la pasarela o agregador de pagos y la tarjeta asociada, salvo que por razones técnicas sea necesario acordar otro medio.",
-            "El tiempo que tarde en reflejarse el importe dependerá de los procesos internos de la institución bancaria y de la plataforma de cobro.",
-            "La Empresa notificará al Cliente por correo electrónico una vez que haya iniciado el proceso de reembolso."
+            "El tiempo que tarde en reflejarse el importe dependerá de los procesos internos de la institución bancaria y de la plataforma de cobro. La Empresa notificará al Cliente por correo electrónico una vez que haya iniciado el proceso de reembolso."
           ]
         },
         {
@@ -89,7 +88,7 @@ export default function DevolucionesPage() {
         {
           title: "J. Procedimiento para solicitar cancelación o reembolso",
           body: [
-            "Para solicitar una cancelación o plantear un posible reembolso, el Cliente deberá escribir a hola@growthive.com.mx indicando:",
+            "Para solicitar una cancelación o plantear un posible reembolso, el Cliente deberá escribir a hola@conexiontech.com.mx indicando:",
             "• Nombre o razón social.",
             "• Número de proyecto o referencia del plan contratado.",
             "• Fecha de contratación y forma de pago.",
@@ -108,9 +107,9 @@ export default function DevolucionesPage() {
     },
     en: {
       title: "Refunds and Cancellations Policy",
-      subtitle: "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V.",
+      subtitle: "DIMMER POWER SHOPS, S.A DE C.V.",
       date: "Last updated: September 2026",
-      intro: "This policy applies to all digital plans and projects contracted through growthive.com.mx with the Company (“the Company”), including, but not limited to: website plans, online stores, specialized platforms, branding + web plans, and custom digital projects.",
+      intro: "This policy applies to all digital plans and projects contracted through conexiontech.com.mx with the Company (“the Company”), including, but not limited to: website plans, online stores, specialized platforms, branding + web plans, and custom digital projects.",
       sections: [
         {
           title: "A. Nature of services and general considerations",
@@ -175,8 +174,7 @@ export default function DevolucionesPage() {
           title: "H. Partial refunds and refund payment method",
           body: [
             "When a refund applies (total or partial), it will preferably be made using the same payment method used by the Client, that is, through the payment gateway or aggregator and the associated card, unless for technical reasons it is necessary to agree on another method.",
-            "The time it takes for the amount to reflect will depend on the internal processes of the banking institution and the collection platform.",
-            "The Company will notify the Client by email once the refund process has started."
+            "The time it takes for the amount to reflect will depend on the internal processes of the banking institution and the collection platform. The Company will notify the Client by email once the refund process has started."
           ]
         },
         {
@@ -189,7 +187,7 @@ export default function DevolucionesPage() {
         {
           title: "J. Procedure to request cancellation or refund",
           body: [
-            "To request a cancellation or raise a possible refund, the Client must write to hola@growthive.com.mx indicating:",
+            "To request a cancellation or raise a possible refund, the Client must write to hola@conexiontech.com.mx indicating:",
             "• Name or business name.",
             "• Project number or reference of the contracted plan.",
             "• Date of contracting and payment method.",
@@ -211,18 +209,30 @@ export default function DevolucionesPage() {
   const t = content[lang] || content.es;
 
   return (
-    <main className="min-h-screen bg-cream-paper py-20 sm:py-32">
-      <div className="container mx-auto max-w-4xl px-4 sm:px-6">
-        <h1 className="display text-4xl font-bold text-ink sm:text-5xl">{t.title}</h1>
-        <p className="mt-2 text-lg text-ink/60">{t.subtitle}</p>
-        <p className="mt-4 font-mono text-sm uppercase tracking-widest text-clay">{t.date}</p>
-        <p className="mt-8 text-[0.95rem] leading-relaxed text-ink/80 italic">{t.intro}</p>
+    <main className="min-h-screen bg-slate-950 py-20 sm:py-32 relative overflow-hidden">
+      <div className="absolute inset-0 cyber-grid opacity-20 pointer-events-none" />
+      
+      <div className="container mx-auto max-w-4xl px-4 sm:px-6 relative z-10">
+        <h1 className="text-4xl font-black uppercase tracking-tight text-slate-200 sm:text-5xl">
+          {t.title}
+        </h1>
+        <p className="mt-4 font-mono text-sm uppercase tracking-widest text-sky-500">
+          {t.subtitle}
+        </p>
+        <p className="mt-2 font-mono text-xs uppercase tracking-widest text-slate-500">
+          SYS_LOG: {t.date}
+        </p>
+        <p className="mt-8 font-mono text-sm leading-relaxed text-slate-400 border-l-2 border-slate-800 pl-4">
+          {t.intro}
+        </p>
         
         <div className="mt-12 space-y-12">
           {t.sections.map((sec, i) => (
-            <section key={i}>
-              <h2 className="display mb-4 text-2xl font-semibold text-ink">{sec.title}</h2>
-              <div className="space-y-3 text-[0.95rem] leading-relaxed text-ink/80">
+            <section key={i} className="rounded-xl border border-slate-800 bg-slate-900/50 p-6 sm:p-8 backdrop-blur-sm">
+              <h2 className="mb-6 text-xl font-bold uppercase tracking-wide text-sky-400">
+                {sec.title}
+              </h2>
+              <div className="space-y-4 font-mono text-[0.85rem] leading-relaxed text-slate-400">
                 {sec.body.map((paragraph, j) => (
                   <p key={j}>{paragraph}</p>
                 ))}

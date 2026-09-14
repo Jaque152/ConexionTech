@@ -11,7 +11,7 @@ export function StoreGrid() {
     <div>
       <div className="flex items-center justify-between border-y border-slate-800 py-5">
         <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
-          SYS_LOG: {String(webPlans.length).padStart(2, "0")} {t.store.plansCountLabel} disponibles
+          {String(webPlans.length).padStart(2, "0")} {t.store.plansCountLabel} disponibles
         </p>
       </div>
 
