@@ -10,9 +10,9 @@ export function ContactoClient() {
   const { t } = useLanguage();
 
   const DETAILS = [
-    { icon: Phone, label: t.contactPage.detailsLabelPhone, value: "+52 55 9826 1186", href: "tel:+525598261186" },
+    { icon: Phone, label: t.contactPage.detailsLabelPhone, value: "+52 1 55 5088 5510", href: "tel:+5215550885510" },
     { icon: Mail, label: t.contactPage.detailsLabelEmail, value: "hola@conexiontech.com.mx", href: "mailto:hola@conexiontech.com.mx" },
-    { icon: MapPin, label: t.contactPage.detailsLabelAddress, value: "Boulevard Adolfo López Mateos 2165, CDMX", href: "#" },
+    { icon: MapPin, label: t.contactPage.detailsLabelAddress, value: "Av. Chapultepec No.480, Piso 9, Col. Roma Norte, C.P. 06700, Alcaldía Cuauhtémoc, CDMX", href: "#" },
   ];
 
   return (
