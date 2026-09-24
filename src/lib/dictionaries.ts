@@ -34,7 +34,7 @@ export const dictionaries = {
       contactEyebrow: "Canal de Soporte",
       addressEyebrow: "Base de Operaciones",
       addressText:
-        "Boulevard Adolfo López Mateos 2165, Interior 607A Oficina 607A-B Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México",
+        "AVENIDA FLORENCIA 57, INTERIOR 103 OFICINA 103-A, COLONIA JUÁREZ, ALCALDÍA CUAUHTÉMOC, C.P. 06600, CIUDAD DE MÉXICO",
       copyright: "© 2026 Conexiontech.com.mx — Ingeniería digital desarrollada en México.",
       studio: "Agencia & Sistemas",
     },
@@ -283,7 +283,7 @@ export const dictionaries = {
       contactEyebrow: "Support Channel",
       addressEyebrow: "Operations Base",
       addressText:
-        "Boulevard Adolfo López Mateos 2165, Interior 607A Oficina 607A-B Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Mexico City",
+        "AVENIDA FLORENCIA 57, INTERIOR 103 OFICINA 103-A, COLONIA JUÁREZ, ALCALDÍA CUAUHTÉMOC, C.P. 06600, CIUDAD DE MÉXICO",
       copyright: "© 2026 Conexiontech.com.mx — Digital engineering developed in Mexico.",
       studio: "Systems & Agency",
     },

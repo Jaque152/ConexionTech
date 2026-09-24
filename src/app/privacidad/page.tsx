@@ -13,8 +13,8 @@ export default function PrivacidadPage() {
         {
           title: "A. Identidad y domicilio del responsable",
           body: [
-            "DIMMER POWER SHOPS, S.A DE C.V. (en lo sucesivo, “la Empresa”), con domicilio en Av. Chapultepec N°480 Piso 9 Dep. 901, Col. Roma Norte, C.P. 06700, Alcaldía Cuauhtémoc Ciudad de México, es responsable del tratamiento de los datos personales que nos proporcione con motivo del uso del sitio web CONEXIONTECH.COM.MX y de la contratación de nuestros servicios digitales.",
-            "Para cualquier asunto relacionado con este Aviso de Privacidad, usted puede comunicarse al correo electrónico hola@conexiontech.com.mx y al teléfono [+52] 1 55 5088 5510.",
+            "HERMITAGETECH ENTERPRISES, S.A.P.I. DE C.V. (en lo sucesivo, “la Empresa”), con domicilio en AVENIDA FLORENCIA 57, INTERIOR 103 OFICINA 103-A, COLONIA JUÁREZ, ALCALDÍA CUAUHTÉMOC, C.P. 06600, CIUDAD DE MÉXICO, es responsable del tratamiento de los datos personales que nos proporcione con motivo del uso del sitio web URL DEL SITIO WEB PENDIENTE y de la contratación de nuestros servicios digitales.",
+            "Para cualquier asunto relacionado con este Aviso de Privacidad, usted puede comunicarse al correo electrónico hola@conexiontech.com.mx y al teléfono +52 55 5533 2498.",
             "Este Aviso se emite en cumplimiento de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, su Reglamento y los Lineamientos del Aviso de Privacidad."
           ]
         },
@@ -67,7 +67,8 @@ export default function PrivacidadPage() {
             "• Proveedores de servicios de pago y pasarelas en línea, para procesar transacciones con tarjeta de crédito o débito o medios electrónicos.",
             "• Asesores externos (contables, fiscales, legales, auditoría) para el cumplimiento de obligaciones legales.",
             "• Autoridades competentes, cuando una ley, reglamento u orden judicial así lo exijan.",
-            "En todos los casos, la Empresa procurará que los terceros mantengan la confidencialidad de la información y la utilicen únicamente para las finalidades señaladas en este Aviso, adoptando las medidas de seguridad que resulten aplicables. Las transferencias distintas a las anteriores que requieran su consentimiento serán puestas en su conocimiento previamente, a fin de recabarlo según exija la ley."
+            "En todos los casos, la Empresa procurará que los terceros mantengan la confidencialidad de la información y la utilicen únicamente para las finalidades señaladas en este Aviso, adoptando las medidas de seguridad que resulten aplicables.",
+            "Las transferencias distintas a las anteriores que requieran su consentimiento serán puestas en su conocimiento previamente, a fin de recabarlo según exija la ley."
           ]
         },
         {
@@ -75,14 +76,14 @@ export default function PrivacidadPage() {
           body: [
             "Como titular de los datos personales, usted puede ejercer en cualquier momento sus derechos de Acceso, Rectificación, Cancelación y Oposición (ARCO), así como revocar el consentimiento otorgado, en los términos previstos por la Ley.",
             "Para ejercer dichos derechos, deberá enviar una solicitud a:",
-            "Correo electrónico: hola@conexiontech.com.mx",
-            "Domicilio: Av. Chapultepec N°480 Piso 9 Dep. 901, Col. Roma Norte, C.P. 06700, Alcaldía Cuauhtémoc Ciudad de México",
+            "• Correo electrónico: hola@conexiontech.com.mx",
+            "• Domicilio: AVENIDA FLORENCIA 57, INTERIOR 103 OFICINA 103-A, COLONIA JUÁREZ, ALCALDÍA CUAUHTÉMOC, C.P. 06600, CIUDAD DE MÉXICO",
             "Su solicitud deberá contener, al menos:",
-            "• Nombre completo y un medio para comunicarle la respuesta (domicilio, correo electrónico o número telefónico).",
-            "• Copia de un documento que acredite su identidad o, en su caso, la representación legal (credencial oficial, poder, etc.).",
-            "• Descripción clara y precisa de los datos personales respecto de los que busca ejercer alguno de los derechos ARCO.",
-            "• Cualquier elemento que facilite la localización de los datos (por ejemplo, fecha de contratación, número de proyecto, correo utilizado).",
-            "• En caso de rectificación, la descripción de las modificaciones a realizarse y la documentación que sustente su petición.",
+            "1. Nombre completo y un medio para comunicarle la respuesta (domicilio, correo electrónico o número telefónico).",
+            "2. Copia de un documento que acredite su identidad o, en su caso, la representación legal (credencial oficial, poder, etc.).",
+            "3. Descripción clara y precisa de los datos personales respecto de los que busca ejercer alguno de los derechos ARCO.",
+            "4. Cualquier elemento que facilite la localización de los datos (por ejemplo, fecha de contratación, número de proyecto, correo utilizado).",
+            "5. En caso de rectificación, la descripción de las modificaciones a realizarse y la documentación que sustente su petición.",
             "La Empresa acusará de recibido su solicitud en los plazos que fija la ley y dará respuesta dentro del término legal correspondiente, informando si la misma resulta procedente."
           ]
         },
@@ -122,8 +123,8 @@ export default function PrivacidadPage() {
         {
           title: "A. Identity and address of the responsible party",
           body: [
-            "DIMMER POWER SHOPS, S.A DE C.V. (hereinafter, \"the Company\"), located at Av. Chapultepec N°480 Piso 9 Dep. 901, Col. Roma Norte, C.P. 06700, Alcaldía Cuauhtémoc, Mexico City, is responsible for the processing of the personal data you provide to us through the use of the CONEXIONTECH.COM.MX website and the contracting of our digital services.",
-            "For any matter related to this Privacy Policy, you can contact us at the email hola@conexiontech.com.mx and at the phone number [+52] 1 55 5088 5510.",
+            "HERMITAGETECH ENTERPRISES, S.A.P.I. DE C.V. (hereinafter, \"the Company\"), located at AVENIDA FLORENCIA 57, INTERIOR 103 OFICINA 103-A, COLONIA JUÁREZ, ALCALDÍA CUAUHTÉMOC, C.P. 06600, CIUDAD DE MÉXICO, is responsible for the processing of the personal data you provide to us through the use of the website URL DEL SITIO WEB PENDIENTE and the contracting of our digital services.",
+            "For any matter related to this Privacy Policy, you can contact us at the email hola@conexiontech.com.mx and at the phone number +52 55 5533 2498.",
             "This Policy is issued in compliance with the Federal Law on Protection of Personal Data Held by Private Parties, its Regulations, and the Privacy Policy Guidelines."
           ]
         },
@@ -176,7 +177,8 @@ export default function PrivacidadPage() {
             "• Online payment service providers and gateways, to process credit or debit card transactions or electronic means.",
             "• External advisors (accounting, tax, legal, auditing) for compliance with legal obligations.",
             "• Competent authorities, when a law, regulation, or court order so requires.",
-            "In all cases, the Company will ensure that third parties maintain the confidentiality of the information and use it solely for the purposes indicated in this Policy, adopting applicable security measures. Transfers other than the above that require your consent will be brought to your attention beforehand, in order to obtain it as required by law."
+            "In all cases, the Company will ensure that third parties maintain the confidentiality of the information and use it solely for the purposes indicated in this Policy, adopting applicable security measures.",
+            "Transfers other than the above that require your consent will be brought to your attention beforehand, in order to obtain it as required by law."
           ]
         },
         {
@@ -184,14 +186,14 @@ export default function PrivacidadPage() {
           body: [
             "As the owner of personal data, you can exercise your rights of Access, Rectification, Cancellation, and Opposition (ARCO) at any time, as well as revoke the consent granted, under the terms provided by the Law.",
             "To exercise these rights, you must send a request to:",
-            "Email: hola@conexiontech.com.mx",
-            "Address: Av. Chapultepec N°480 Piso 9 Dep. 901, Col. Roma Norte, C.P. 06700, Alcaldía Cuauhtémoc, Mexico City",
+            "• Email: hola@conexiontech.com.mx",
+            "• Address: AVENIDA FLORENCIA 57, INTERIOR 103 OFICINA 103-A, COLONIA JUÁREZ, ALCALDÍA CUAUHTÉMOC, C.P. 06600, CIUDAD DE MÉXICO",
             "Your request must contain at least:",
-            "• Full name and a means to communicate the response (address, email, or phone number).",
-            "• Copy of a document proving your identity or, where applicable, legal representation (official ID, power of attorney, etc.).",
-            "• Clear and precise description of the personal data regarding which you seek to exercise any of the ARCO rights.",
-            "• Any element that facilitates the location of the data (e.g., hiring date, project number, email used).",
-            "• In the case of rectification, the description of the modifications to be made and the documentation supporting your request.",
+            "1. Full name and a means to communicate the response (address, email, or phone number).",
+            "2. Copy of a document proving your identity or, where applicable, legal representation (official ID, power of attorney, etc.).",
+            "3. Clear and precise description of the personal data regarding which you seek to exercise any of the ARCO rights.",
+            "4. Any element that facilitates the location of the data (e.g., hiring date, project number, email used).",
+            "5. In the case of rectification, the description of the modifications to be made and the documentation supporting your request.",
             "The Company will acknowledge receipt of your request within the deadlines established by law and will respond within the corresponding legal term, informing whether it is accepted."
           ]
         },

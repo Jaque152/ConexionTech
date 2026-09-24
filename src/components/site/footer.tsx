@@ -75,8 +75,8 @@ export function Footer() {
               {t.footer.contactEyebrow}
             </p>
             <div className="flex flex-col gap-3 font-mono text-sm mt-4">
-              <a href="tel:+525598261186" className="text-slate-400 transition-colors hover:text-sky-400">
-                +52 55 9826 1186
+              <a href="tel:+525555332498" className="text-slate-400 transition-colors hover:text-sky-400">
+                +52 55 5533 2498
               </a>
               <a href="mailto:hola@conexiontech.com.mx" className="text-slate-400 transition-colors hover:text-sky-400">
                 hola@conexiontech.com.mx

@@ -9,15 +9,15 @@ export default function TerminosPage() {
   const content = {
     es: {
       title: "Términos y Condiciones",
-      subtitle: "DIMMER POWER SHOPS, S.A DE C.V.",
+      subtitle: "HERMITAGETECH ENTERPRISES, S.A.P.I. DE C.V.",
       date: "Fecha de entrada en vigor: Septiembre de 2026",
       sections: [
         {
           title: "A. Marco general del servicio",
           body: [
-            "La prestación de los servicios descritos en este sitio web corre a cargo de DIMMER POWER SHOPS, S.A DE C.V. (en adelante, “la Empresa”), con domicilio en Av. Chapultepec N°480 Piso 9 Dep. 901, Col. Roma Norte, C.P. 06700, Alcaldía Cuauhtémoc Ciudad de México.",
+            "La prestación de los servicios descritos en este sitio web corre a cargo de HERMITAGETECH ENTERPRISES, S.A.P.I. DE C.V. (en adelante, “la Empresa”), con domicilio en AVENIDA FLORENCIA 57, INTERIOR 103 OFICINA 103-A, COLONIA JUÁREZ, ALCALDÍA CUAUHTÉMOC, C.P. 06600, CIUDAD DE MÉXICO",
             "El uso del sitio conexiontech.com.mx y la contratación de cualquiera de los planes o proyectos digitales implica que el usuario (el “Cliente”) ha leído, comprende y acepta íntegramente estos Términos y Condiciones.",
-            "Para consultas, aclaraciones o soporte, el Cliente puede contactar a la Empresa en el correo hola@conexiontech.com.mx y en el teléfono [+52] 1 55 5088 5510."
+            "Para consultas, aclaraciones o soporte, el Cliente puede contactar a la Empresa en el correo hola@conexiontech.com.mx y en el teléfono +52 55 5533 2498."
           ]
         },
         {
@@ -54,11 +54,11 @@ export default function TerminosPage() {
           title: "E. Flujo de contratación y aceptación",
           body: [
             "El proceso general de contratación a través del sitio suele seguir estas etapas:",
-            "• Paso 1: El Cliente revisa los planes disponibles o la opción de proyecto a la medida.",
-            "• Paso 2: El Cliente selecciona un plan o solicita un proyecto personalizado, llenando el formulario correspondiente o utilizando los botones de “contactar” o “pagar”.",
-            "• Paso 3: El sitio muestra el resumen del servicio, precio, impuestos aplicables y, en su caso, opciones de pago en línea.",
-            "• Paso 4: El Cliente proporciona los datos necesarios de contacto y facturación y, en los casos de pago en línea, procede a realizar el pago mediante la pasarela indicada.",
-            "• Paso 5: La Empresa confirma por correo electrónico la recepción del pago o, tratándose de proyectos a la medida, envía una propuesta formal con alcance, costo y tiempos de entrega, que el Cliente deberá aprobar expresamente.",
+            "Paso 1: El Cliente revisa los planes disponibles o la opción de proyecto a la medida.",
+            "Paso 2: El Cliente selecciona un plan o solicita un proyecto personalizado, llenando el formulario correspondiente o utilizando los botones de “contactar” o “pagar”.",
+            "Paso 3: El sitio muestra el resumen del servicio, precio, impuestos aplicables y, en su caso, opciones de pago en línea.",
+            "Paso 4: El Cliente proporciona los datos necesarios de contacto y facturación y, en los casos de pago en línea, procede a realizar el pago mediante la pasarela indicada.",
+            "Paso 5: La Empresa confirma por correo electrónico la recepción del pago o, tratándose de proyectos a la medida, envía una propuesta formal con alcance, costo y tiempos de entrega, que el Cliente deberá aprobar expresamente.",
             "La aceptación del presupuesto, plan o propuesta —ya sea mediante pago, firma electrónica, correo de confirmación o cualquier otro medio de aceptación inequívoca— implica la conformidad del Cliente con estos Términos y Condiciones y con las condiciones particulares del servicio elegido."
           ]
         },
@@ -108,7 +108,12 @@ export default function TerminosPage() {
           title: "J. Uso, mantenimiento y soporte posterior",
           body: [
             "Salvo que se haya contratado expresamente un servicio de mantenimiento o soporte continuo, la obligación principal de la Empresa se limita al desarrollo y entrega del sitio, tienda o plataforma conforme a las especificaciones del plan o propuesta.",
-            "Servicios posteriores como: Actualización de contenidos, Cambios frecuentes en secciones, Mantenimiento técnico de CMS, plugins o componentes, Soporte para problemas derivados de manipulaciones hechas por el Cliente o por terceros. Se considerarán servicios independientes y requerirán un acuerdo adicional de alcance y honorarios."
+            "Servicios posteriores como:",
+            "• Actualización de contenidos.",
+            "• Cambios frecuentes en secciones.",
+            "• Mantenimiento técnico de CMS, plugins o componentes.",
+            "• Soporte para problemas derivados de manipulaciones hechas por el Cliente o por terceros.",
+            "Se considerarán servicios independientes y requerirán un acuerdo adicional de alcance y honorarios."
           ]
         },
         {
@@ -122,7 +127,7 @@ export default function TerminosPage() {
         {
           title: "L. Datos personales y confidencialidad",
           body: [
-            "El tratamiento de los datos personales que el Cliente facilite a través del sitio se rige por el Aviso de Privacidad de la Empresa.",
+            "El tratamiento de los datos personales que el Cliente facilite a través del sitio se rige por el Aviso de Privacidad de la Empresa, disponible en PENDIENTE: URL AVISO DE PRIVACIDAD. Ahí se describe qué datos se recaban, para qué se utilizan y cómo se pueden ejercer los derechos ARCO.",
             "La Empresa y el Cliente se obligan a mantener la confidencialidad de la información técnica, comercial o estratégica que llegue a su conocimiento con motivo de la relación contractual, salvo obligación legal de revelarla o autorización expresa de la parte que sea titular de la información."
           ]
         },
@@ -158,15 +163,15 @@ export default function TerminosPage() {
     },
     en: {
       title: "Terms and Conditions",
-      subtitle: "DIMMER POWER SHOPS, S.A DE C.V.",
+      subtitle: "HERMITAGETECH ENTERPRISES, S.A.P.I. DE C.V.",
       date: "Effective date: September 2026",
       sections: [
         {
           title: "A. General Service Framework",
           body: [
-            "The provision of services described on this website is carried out by DIMMER POWER SHOPS, S.A DE C.V. (hereinafter, “the Company”), located at Av. Chapultepec N°480 Piso 9 Dep. 901, Col. Roma Norte, C.P. 06700, Alcaldía Cuauhtémoc, Mexico City.",
+            "The provision of services described on this website is carried out by HERMITAGETECH ENTERPRISES, S.A.P.I. DE C.V. (hereinafter, “the Company”), located at AVENIDA FLORENCIA 57, INTERIOR 103 OFICINA 103-A, COLONIA JUÁREZ, ALCALDÍA CUAUHTÉMOC, C.P. 06600, CIUDAD DE MÉXICO.",
             "The use of the website conexiontech.com.mx and the contracting of any of the digital plans or projects implies that the user (the “Client”) has read, understands, and fully accepts these Terms and Conditions.",
-            "For inquiries, clarifications, or support, the Client may contact the Company at hola@conexiontech.com.mx and by phone at [+52] 1 55 5088 5510."
+            "For inquiries, clarifications, or support, the Client may contact the Company at hola@conexiontech.com.mx and by phone at +52 55 5533 2498."
           ]
         },
         {
@@ -203,11 +208,11 @@ export default function TerminosPage() {
           title: "E. Contracting and Acceptance Flow",
           body: [
             "The general contracting process through the site typically follows these stages:",
-            "• Step 1: The Client reviews available plans or custom project options.",
-            "• Step 2: The Client selects a plan or requests a customized project, filling out the corresponding form or using the 'contact' or 'pay' buttons.",
-            "• Step 3: The site displays a service summary, price, applicable taxes, and payment options.",
-            "• Step 4: The Client provides necessary contact and billing details and, in cases of online payment, proceeds with payment through the indicated gateway.",
-            "• Step 5: The Company confirms payment receipt via email or, in the case of custom projects, sends a formal proposal with scope, cost, and delivery times, which the Client must expressly approve.",
+            "Step 1: The Client reviews available plans or custom project options.",
+            "Step 2: The Client selects a plan or requests a customized project, filling out the corresponding form or using the 'contact' or 'pay' buttons.",
+            "Step 3: The site displays a service summary, price, applicable taxes, and payment options.",
+            "Step 4: The Client provides necessary contact and billing details and, in cases of online payment, proceeds with payment through the indicated gateway.",
+            "Step 5: The Company confirms payment receipt via email or, in the case of custom projects, sends a formal proposal with scope, cost, and delivery times, which the Client must expressly approve.",
             "Acceptance of the budget, plan, or proposal—whether through payment, electronic signature, confirmation email, or any other unequivocal means of acceptance—implies the Client's agreement with these Terms and Conditions and the specific conditions of the chosen service."
           ]
         },
@@ -257,7 +262,12 @@ export default function TerminosPage() {
           title: "J. Post-Delivery Use, Maintenance, and Support",
           body: [
             "Unless a continuous maintenance or support service has been expressly contracted, the Company's primary obligation is limited to the development and delivery of the site, store, or platform according to the plan's or proposal's specifications.",
-            "Subsequent services such as: Content updates, Frequent section changes, CMS, plugins or components technical maintenance, Support for problems derived from manipulation by the Client or third parties. These will be considered independent services and will require an additional scope and fee agreement."
+            "Subsequent services such as:",
+            "• Content updates.",
+            "• Frequent section changes.",
+            "• CMS, plugins or components technical maintenance.",
+            "• Support for problems derived from manipulation by the Client or third parties.",
+            "These will be considered independent services and will require an additional scope and fee agreement."
           ]
         },
         {
@@ -271,7 +281,7 @@ export default function TerminosPage() {
         {
           title: "L. Personal Data and Confidentiality",
           body: [
-            "The processing of personal data provided by the Client through the site is governed by the Company's Privacy Policy.",
+            "The processing of personal data provided by the Client through the site is governed by the Company's Privacy Policy, available at PENDIENTE: URL AVISO DE PRIVACIDAD. It describes what data is collected, what it is used for, and how ARCO rights can be exercised.",
             "The Company and the Client agree to maintain the confidentiality of technical, commercial, or strategic information learned due to the contractual relationship, except for a legal obligation to disclose it or express authorization from the party owning the information."
           ]
         },
@@ -332,13 +342,15 @@ export default function TerminosPage() {
               </h2>
               <div className="space-y-4 font-mono text-[0.85rem] leading-relaxed text-slate-400">
                 {sec.body.map((paragraph, j) => {
-                  if (paragraph.includes("Aviso de Privacidad de la Empresa.") || paragraph.includes("Company's Privacy Policy.")) {
+                  if (paragraph.includes("PENDIENTE: URL AVISO DE PRIVACIDAD")) {
+                    const parts = paragraph.split("PENDIENTE: URL AVISO DE PRIVACIDAD");
                     return (
                       <p key={j}>
-                        {lang === "es" ? "El tratamiento de los datos personales que el Cliente facilite a través del sitio se rige por el " : "The processing of personal data provided by the Client through the site is governed by the "}
+                        {parts[0]}
                         <Link href="/privacidad" className="font-medium text-sky-400 underline underline-offset-4 hover:text-sky-300">
-                          {lang === "es" ? "Aviso de Privacidad de la Empresa." : "Company's Privacy Policy."}
+                          {lang === "es" ? "Aviso de Privacidad" : "Privacy Policy"}
                         </Link>
+                        {parts[1]}
                       </p>
                     )
                   }

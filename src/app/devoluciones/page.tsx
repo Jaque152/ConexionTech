@@ -8,9 +8,9 @@ export default function DevolucionesPage() {
   const content = {
     es: {
       title: "Política de Reembolsos y Cancelaciones",
-      subtitle: "DIMMER POWER SHOPS, S.A DE C.V.",
+      subtitle: "HERMITAGETECH ENTERPRISES, S.A.P.I. DE C.V.",
       date: "Fecha de última actualización: Septiembre de 2026",
-      intro: "Esta política aplica a todos los planes y proyectos digitales contratados a través de conexiontech.com.mx con la Empresa (“la Empresa”), incluyendo, pero no limitado a: planes de sitios web, tiendas en línea, plataformas especializadas, planes de branding + web y proyectos digitales a la medida.",
+      intro: "Esta política aplica a todos los planes y proyectos digitales contratados a través de conexiontech.com.mx con la Empresa, incluyendo, pero no limitado a: planes de sitios web, tiendas en línea, plataformas especializadas, planes de branding + web y proyectos digitales a la medida.",
       sections: [
         {
           title: "A. Naturaleza de los servicios y consideraciones generales",
@@ -41,8 +41,9 @@ export default function DevolucionesPage() {
         {
           title: "D. Planes estándar vs. proyectos a la medida",
           body: [
-            "En planes estándar (por ejemplo: Plan Landing Page Emprendedor, Plan Presencia Digital Básica, Plan Sitio Web Profesional, Plan Tienda en Línea Básica, etc.), la Empresa podrá, en algunos casos, ofrecer reembolsos parciales si la cancelación ocurre en fases muy tempranas y el trabajo avanzado es limitado.",
-            "En proyectos a la medida o desarrollos con alto grado de personalización, los importes de anticipo suelen corresponder casi en su totalidad al tiempo de análisis y diseño inicial; por ello, como regla general, dichos anticipos no son reembolsables una vez iniciado el trabajo. Cualquier excepción será valorada caso por caso y comunicada por escrito al Cliente."
+            "• En planes estándar (por ejemplo: Plan Landing Page Emprendedor, Plan Presencia Digital Básica, Plan Sitio Web Profesional, Plan Tienda en Línea Básica, etc.), la Empresa podrá, en algunos casos, ofrecer reembolsos parciales si la cancelación ocurre en fases muy tempranas y el trabajo avanzado es limitado.",
+            "• En proyectos a la medida o desarrollos con alto grado de personalización, los importes de anticipo suelen corresponder casi en su totalidad al tiempo de análisis y diseño inicial; por ello, como regla general, dichos anticipos no son reembolsables una vez iniciado el trabajo.",
+            "Cualquier excepción será valorada caso por caso y comunicada por escrito al Cliente."
           ]
         },
         {
@@ -107,9 +108,9 @@ export default function DevolucionesPage() {
     },
     en: {
       title: "Refunds and Cancellations Policy",
-      subtitle: "DIMMER POWER SHOPS, S.A DE C.V.",
+      subtitle: "HERMITAGETECH ENTERPRISES, S.A.P.I. DE C.V.",
       date: "Last updated: September 2026",
-      intro: "This policy applies to all digital plans and projects contracted through conexiontech.com.mx with the Company (“the Company”), including, but not limited to: website plans, online stores, specialized platforms, branding + web plans, and custom digital projects.",
+      intro: "This policy applies to all digital plans and projects contracted through conexiontech.com.mx with the Company, including, but not limited to: website plans, online stores, specialized platforms, branding + web plans, and custom digital projects.",
       sections: [
         {
           title: "A. Nature of services and general considerations",
@@ -140,8 +141,9 @@ export default function DevolucionesPage() {
         {
           title: "D. Standard plans vs. custom projects",
           body: [
-            "In standard plans (e.g.: Entrepreneur Landing Page Plan, Basic Digital Presence Plan, Professional Website Plan, Basic Online Store Plan, etc.), the Company may, in some cases, offer partial refunds if the cancellation occurs in very early phases and the advanced work is limited.",
-            "In custom projects or highly customized developments, advance payments usually correspond almost entirely to the initial analysis and design time; therefore, as a general rule, such advances are non-refundable once the work has started. Any exception will be evaluated on a case-by-case basis and communicated in writing to the Client."
+            "• In standard plans (e.g.: Entrepreneur Landing Page Plan, Basic Digital Presence Plan, Professional Website Plan, Basic Online Store Plan, etc.), the Company may, in some cases, offer partial refunds if the cancellation occurs in very early phases and the advanced work is limited.",
+            "• In custom projects or highly customized developments, advance payments usually correspond almost entirely to the initial analysis and design time; therefore, as a general rule, such advances are non-refundable once the work has started.",
+            "Any exception will be evaluated on a case-by-case basis and communicated in writing to the Client."
           ]
         },
         {
