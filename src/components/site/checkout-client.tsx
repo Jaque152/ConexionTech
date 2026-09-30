@@ -185,7 +185,7 @@ export function CheckoutClient() {
             {/* ETOMIN HEADER */}
             <div className="mb-6 flex items-center justify-between gap-2 rounded border border-sky-500/20 bg-sky-500/5 px-4 py-3 text-xs font-mono text-sky-400">
               <div className="flex items-center gap-2"><Lock className="h-4 w-4 shrink-0" />{t.checkout.protected}</div>
-              <img src="/etomin_logo.svg" alt="Procesado por Etomin" className="h-[22px] object-contain opacity-90 invert brightness-0" />
+              <img src="/logo-octano-2.png" alt="Procesado por Etomin" className="h-[22px] object-contain opacity-90 invert brightness-0" />
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2">
