@@ -5,11 +5,11 @@ import axios from "axios";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// 1. CONFIGURACIÓN CLIENTE ETOMIN
-const ETOMIN_BASE_URL = "https://pagos.etomin.com/api/v1";
+// 1. CONFIGURACIÓN CLIENTE OCTANO
+const OCTANO_BASE_URL = "https://pagos.octanopayments.com/api/v1";
 
-const etominClient = axios.create({
-  baseURL: ETOMIN_BASE_URL,
+const octanoClient = axios.create({
+  baseURL: OCTANO_BASE_URL,
   headers: {
     "accept": "application/json",
     "content-type": "application/json",
@@ -57,35 +57,44 @@ export interface CheckoutPayload {
   lang: "es" | "en";
 }
 
-// 3. PROCESAMIENTO DEL PAGO CON ETOMIN
+// 3. PROCESAMIENTO DEL PAGO CON OCTANO
 export async function processCheckout(payload: CheckoutPayload) {
   try {
     const { form, items, totals, lang } = payload;
     const orderId = `CT-${Math.floor(100000 + Math.random() * 899999)}`;
     const currentLang = lang || "es";
 
-    const emailStr = process.env.ETOMIN_USER;
-    const passwordStr = process.env.ETOMIN_PASSWORD;
+    const emailStr = process.env.OCTANO_USER || process.env.OCTANO_EMAIL;
+    const passwordStr = process.env.OCTANO_PASSWORD;
 
     if (!emailStr || !passwordStr) {
-      throw new Error("Variables de entorno de Etomin (User/Password) no configuradas.");
+      throw new Error("Variables de entorno de Octano (User/Password) no configuradas.");
     }
 
-    // A. AUTENTICACIÓN EN ETOMIN (Obtener AuthToken)
-    const authResponse = await etominClient.post("/signin", {
-      email: emailStr,
-      password: passwordStr,
-    });
+    // A. AUTENTICACIÓN EN OCTANO (Obtener AuthToken usando x-www-form-urlencoded)
+    const authResponse = await axios.post(
+      `${OCTANO_BASE_URL}/signin`,
+      new URLSearchParams({
+        email: emailStr,
+        password: passwordStr,
+      }).toString(),
+      {
+        headers: {
+          "accept": "application/json",
+          "content-type": "application/x-www-form-urlencoded",
+        },
+      }
+    );
     
     const authToken = authResponse.data?.authToken;
-    if (!authToken) throw new Error("Error de autenticación con la pasarela Etomin.");
+    if (!authToken) throw new Error("Error de autenticación con la pasarela Octano.");
 
     // B. TOKENIZACIÓN DE LA TARJETA
     const expParts = form.exp.split("/");
     const expirationMonth = expParts[0].trim();
     const expirationYear = `20${expParts[1].trim()}`;
 
-    const tokenResponse = await etominClient.post(
+    const tokenResponse = await octanoClient.post(
       "/card/tokenizer",
       {
         cardData: {
@@ -132,7 +141,7 @@ export async function processCheckout(payload: CheckoutPayload) {
       }
     };
 
-    const saleResponse = await etominClient.post("/sale", salePayload, {
+    const saleResponse = await octanoClient.post("/sale", salePayload, {
       headers: { Authorization: `Bearer ${authToken}` },
     });
 
@@ -140,7 +149,7 @@ export async function processCheckout(payload: CheckoutPayload) {
     const isApproved = saleData.status?.toUpperCase() === "APPROVED";
 
     if (!isApproved) {
-      console.error("❌ Pago Declinado por Etomin:", saleData);
+      console.error("❌ Pago Declinado por Octano:", saleData);
       return { 
         success: false, 
         error: "El pago fue declinado. Revisa los fondos o intenta con otra tarjeta." 
@@ -153,11 +162,9 @@ export async function processCheckout(payload: CheckoutPayload) {
     return { success: true, orderId };
     
   } catch (error: unknown) {
-    // RESOLUCIÓN DE TIPOS ESTRICTOS (Type Guards)
     if (axios.isAxiosError(error)) {
-      console.error("❌ Checkout Error (Etomin Axios):", error.response?.data || error.message);
+      console.error("❌ Checkout Error (Octano Axios):", error.response?.data || error.message);
       
-      // Aseguramos que errorMessage sea de tipo string usando coerción segura
       const responseMessage = error.response?.data?.message;
       const errorMessage = typeof responseMessage === 'string' 
         ? responseMessage 
@@ -193,7 +200,7 @@ async function enviarCorreos(
       subjectAdmin: `💰 [SYS_NOTIFY] INGRESO APROBADO: - ${form.nombre}`,
       title: `Confirmación de Despliegue`,
       hello: `SYS_USER`,
-      intro: `La transacción ha sido encriptada y validada exitosamente en la red de Etomin. El proceso de despliegue ha sido inicializado.`,
+      intro: `La transacción ha sido encriptada y validada exitosamente en la red de Octano. El proceso de despliegue ha sido inicializado.`,
       totalPaid: `Total Transferido:`,
       clientData: `Parámetros de Cliente`,
       emailLabel: `Email:`,
@@ -206,7 +213,7 @@ async function enviarCorreos(
       subjectAdmin: `💰 [SYS_NOTIFY] INCOME APPROVED: - ${form.nombre}`,
       title: `Deployment Confirmation`,
       hello: `SYS_USER`,
-      intro: `The transaction has been successfully encrypted and validated on the Etomin network. The deployment process has been initialized.`,
+      intro: `The transaction has been successfully encrypted and validated on the Octano network. The deployment process has been initialized.`,
       totalPaid: `Total Transferred:`,
       clientData: `Client Parameters`,
       emailLabel: `Email:`,
@@ -226,7 +233,7 @@ async function enviarCorreos(
   `).join("");
 
   const emailBody = `
-    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-w: 600px; margin: 0 auto; background-color: #0f172a; padding: 40px; border-radius: 8px; border: 1px solid #1e293b; color: #94a3b8;">
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #0f172a; padding: 40px; border-radius: 8px; border: 1px solid #1e293b; color: #94a3b8;">
       
       <div style="text-align: center; margin-bottom: 30px;">
         <span style="font-family: monospace; font-size: 24px; font-weight: 800; color: #0ea5e9; letter-spacing: 2px;">CONEXION<span style="color:#f8fafc">TECH</span></span>
@@ -276,7 +283,6 @@ async function enviarCorreos(
       html: `<div style="background-color: #020617; padding: 40px;">${emailBody}</div>`,
     });
   } catch (err: unknown) {
-    // También aplicamos tipado estricto al catch de Resend
     if (err instanceof Error) {
       console.error("❌ Error ejecutando Resend:", err.message);
     } else {
